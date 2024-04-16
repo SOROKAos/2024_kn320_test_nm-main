@@ -10,10 +10,11 @@ class SwordBonus:
 
     @staticmethod
     def bonus_poison(item) -> str:
-        """Накладення отрути, шкода +1"""
+        """Накладення отрути, шкода +1 і втрата 2 витривалості"""
         if SwordBonus.__check_obj(item):
             item.damag += 1
-            return f"Застосовано бонус отрути {item.name}"
+            item.vitality -= 2
+            return f"Застосовано бонус отрути {item.name}, нанесено шкоду та зменшено витривалість"
     
     @staticmethod
     def bonus_confusion(item) -> str:
